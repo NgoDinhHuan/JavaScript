@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container">
+    	<div class="row justify-content-center">
+    		<div class="col-md-6">
+
+				<h4 style="margin: 30px 0px;background-color:aqua; text-align: center;" > ĐĂNG KÝ TÀI KHOẢN</h4>
+
+    			<form action="" method="" name="register" onsubmit="return Validate();">
+
+    			  	<div class="form-row">
+	    			    <div class="form-group col-md-12">
+	    			      <label for="name">Họ tên <span style="color: red;" id="errorName">(*)</span></label>
+	    			      <input type="text" name="name" class="form-control" id="name" />
+	    			    </div>
+	    			</div>
+
+	    			<div class="form-row">
+	    			    <div class="form-group col-md-12">
+	    			      <label for="phone">Phone <span style="color: red;" id="errorPhone">(*)</span></label>
+	    			      <input type="text" name="phone" class="form-control" id="phone" />
+	    			    </div>
+    			  	</div>
+
+    			  	<div class="form-row">
+	    			    <div class="form-group col-md-12">
+	    			      <label for="email">Email <span style="color: red;" id="errorEmail">(*)</span></label>
+	    			      <input type="text" name="email" class="form-control" id="email" />
+	    			    </div>
+    			  	</div>
+
+    			  	<div class="form-row">
+	    			    <div class="form-group col-md-12">
+	    			      <label for="pass">Mật khẩu <span style="color: red;" id="errorPass">(*)</span></label>
+	    			      <input type="password" name="password" class="form-control" id="pass" />
+	    			    </div>
+    			  	</div>
+
+    			  <button type="submit" class="btn btn-primary">Gửi thông tin</button>
+    			</form>
+    		</div>
+    	</div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+	<script>
+		
+		function Validate(){
+			var name = document.getElementById('name').value;// lấy tên khi nhập vào input
+			var errorName = document.getElementById('errorName');
+			var regexName = /^[^\d+]*[\d+]{0}[^\d+]*$/;
+
+			if (name == '' || name == null) {
+				errorName.innerHTML = "Họ tên không được để trống";
+			}else if(!regexName.test(name)){
+				errorName.innerHTML = "Họ tên không hợp lệ!";
+				return false;
+			}else{
+				errorName.innerHTML = '';
+			}
+
+			var phone = document.getElementById('phone').value;
+			var errorPhone = document.getElementById('errorPhone');
+			var regexPhone = /^[[0-9]{3}]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{1,4}$/im;
+
+			if (phone == '' || phone == null) {
+				errorPhone.innerHTML = "Số điện thoại không được để trống!";
+			}else if(!regexPhone.test(phone)){
+				errorPhone.innerHTML = "số điện thoại không hợp lệ!";
+				return false;
+			}else{
+				errorPhone.innerHTML = '';
+			}
+
+			var email = document.getElementById('email').value;
+			var errorEmail = document.getElementById('errorEmail');
+			var reGexEmail = /^[a-zA-Z][a-zA-Z0-9._%+-]+@[a-zA-Z]+(.[a-zA-Z]+){1,3}$/igm;
+			
+			if (email == '' || email == null) {
+				errorEmail.innerHTML = "Email không được để trống!";
+			}else if(!reGexEmail.test(email)){
+				errorEmail.innerHTML = "Email không hợp lệ!";
+				return false;
+			}else{
+				errorEmail.innerHTML = '';
+			}
+
+			var passWord = document.getElementById('pass').value;
+			var errorPass = document.getElementById('errorPass');
+
+			if (passWord == '' || passWord == null) {
+				errorPass.innerHTML = "Mật khẩu không để trống!";
+			}else{
+				errorPass.innerHTML = "";
+			}
+			if (name && phone && email  && passWord ) {
+				// Người dùng đã nhập đúng thông tin
+				alert("Đăng ký thành công!");
+			}else{
+			}
+			return false;
+		}
+	</script>
+
+  </body>
+</html>
