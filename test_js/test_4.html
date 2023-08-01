@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test_checkbox</title>
+
+</head>
+<body>
+    <h1>Lấy Giá trị checkbox bằng js</h1>
+    <input type="checkbox" name="hobby" value="đi chơi"/> <label>đi chơi</label> <br/>
+    <input type="checkbox" name="hobby" value="đi du lịch"/> <label>đi du lịch</label> <br/>
+    <input type="checkbox" name="hobby" value="đi chơi thể thao"/> <label>đi chơi thể thao</label> <br/>
+    <input type="checkbox" name="hobby" value="đi về"/> <label>đi về</label> <br/>
+    <input type="checkbox" name="hobby" value="đi bơi"/> <label>đi bơi</label> <br/>
+    <input type="checkbox" name="hobby" value="đi bay"/> <label>đi bay</label> <br/>
+
+    <input type="button" id="btn" value=" xem kết quả"/>
+
+    <script>
+        document.getElementById('btn').onclick = function(){
+            var checkbox = document.getElementsByName('hobby')
+            var result = ''
+            for(var i=0 ; i< checkbox.length;i++){
+                if(checkbox[i].checked === true){
+                    result += checkbox[i].value + ","
+                }
+            }
+            alert("sở thích:"+result)
+        };
+        
+    </script>
+
+
+</body>
+</html>

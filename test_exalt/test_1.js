@@ -1,7 +1,7 @@
 // kiểm tra nếu ký tự n=n-1 thì công vào biến đếm
 //nếu khác thì set lại biến n-1
 //duyêt qua từng phần tử
-//nếu phấn tử n+1 so sánh với n
+// phấn tử n+1 so sánh với n
 //nếu giống tăng biến đếm
 //nếu khong đúng thì đếm lại
 //cho phần tư kia vào danh sach cộng string
@@ -26,6 +26,6 @@ function demchuoi(inputString) {
     return dem_String;
   }
   
-  const chuoi_nhap = 'wwwbbaawwwaaqv';
+  const chuoi_nhap = 'wwwbbaawaa';
   const chuoi_xuat = demchuoi(chuoi_nhap);
   console.log(chuoi_xuat);
